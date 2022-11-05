@@ -1,0 +1,30 @@
+namespace zad7
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            uint st;
+            int sumaD = 0, sumaG = 0, x;
+            Console.WriteLine("Zadanie 7 CS.LAB");
+            Console.WriteLine(" ");
+            Console.WriteLine("Podaj stopień macierzy: ");
+            st = uint.Parse(Console.ReadLine());
+            for(int w=1; w <=st; w++)
+            {
+                for (int k=1; k <=st; k++)
+                {
+                    Console.Write($"Podaj element [{w},{k}]");
+                    x = int.Parse(Console.ReadLine());
+                    if (k > w) sumaG += x;
+                    else if (k < w) sumaD += x;
+
+
+                }
+            }
+            if (sumaG > sumaD) Console.WriteLine($"Suma elementów powyżej głównej przekątnej {sumaG} nie jest większa od sumy elementów\r\nponiżej głównej przekątnej {sumaD}");
+            else Console.WriteLine($"Suma elementów powyżej głównej przekątnej {sumaG} nie jest większa od sumy elementów\\r\\powyżej głównej przekątnej {sumaD}");
+        }
+    }
+}
+
