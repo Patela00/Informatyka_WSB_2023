@@ -28,3 +28,67 @@ namespace zad7
     }
 }
 
+
+
+namespace zad_8
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            uint ile;
+            while (true) // wyjscie z petli gdy parsowanie ok i liczba jest w przedziale od 1 do 10
+            {
+                Console.WriteLine("zad 8");
+                Console.WriteLine("Wprowadź liczbę elementów do posortowania <1....10>");
+                if (uint.TryParse(Console.ReadLine(), out ile))
+                {
+                    if ((ile >= 1) && (ile <= 10)) break;
+                    else Console.WriteLine("Zła liczba, spróbuj ponownie");
+                }
+                else Console.WriteLine("Błąd parsowania");
+
+;
+                    
+            }
+            int[] tab = new int[ile]; //deklaracja i utworzenie 
+            int x;
+            // wprowadzenie liczb do tablicy
+            for(int i = 0; i < ile; i++)
+            {
+                while(true)
+                {
+                    Console.WriteLine($"Wprowadź liczbę {i + 1}");
+                    if (int.TryParse(Console.ReadLine(), out tab[i])) break;
+                    else Console.WriteLine("Błąd parsowania");
+                }
+                
+
+            }
+            //sortowanie
+            for (int j = 0; j < ile; j++)
+            {
+                for (int i = 0; i < ile - 1; i++)
+                {
+                    if (tab[i] > tab[i + 1]) // lewy > prawy
+                    {
+                        x = tab[1];
+                        tab[i] = tab[i + 1];
+                        tab[i + 1] = x;
+
+                    }
+
+                }
+
+            }
+            // wyswietlenie posortowanej tablicy
+            for(int i = 0; i < ile; i++)
+            {
+                Console.WriteLine(tab[i]);
+            }
+                
+
+            Console.ReadKey();
+        }
+    }
+}
