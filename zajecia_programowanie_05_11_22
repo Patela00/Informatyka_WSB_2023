@@ -32,7 +32,7 @@ namespace zajecia_05_11
 
 
 
-
+// ZADANIE DO POPRAWY
 using System.Security.Cryptography.X509Certificates;
 
 namespace zad8
