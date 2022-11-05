@@ -1,0 +1,356 @@
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace K19_JP // nazwa przestrzeni pliku
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {/*
+            int a; //deklaracja zmiennej typu liczba całkowita (4-bajtowa)
+            Console.Write("Podaj liczbe a: "); // wyswietlanie komunikatu
+           a=  int.Parse(Console.ReadLine()); //readline zwaraca String dlatego nie mozna bezposrednio
+                                              // wczytanie danych z klawiatury i konwersja typow 
+
+
+            if (a> 100)
+                Console.WriteLine("wczytana liczba jest wieksza od 100");
+            else Console.WriteLine("wczytana liczba <=100");
+            */
+
+
+            float a, b, wynik;
+            
+            Console.Write("Podaj liczbe a: "); // wyswietlanie komunikatu
+            a = float.Parse(Console.ReadLine());
+
+            Console.Write("Podaj liczbe b: "); // wyswietlanie komunikatu
+            b = float.Parse(Console.ReadLine());
+
+            if (a == -b)
+                Console.WriteLine("Próba dzielenia przez zero");
+            else
+            {
+                wynik = (a * a + b) / ((a + b) * (a + b));
+
+                Console.WriteLine("Wartosc wyrazenia wynosi: " + wynik);
+            }
+            Console.ReadKey(); //czytaj klawisz
+        }
+    }
+}
+
+
+
+
+
+next 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace K19_JP // nazwa przestrzeni pliku
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {/*
+            int a; //deklaracja zmiennej typu liczba całkowita (4-bajtowa)
+            Console.Write("Podaj liczbe a: "); // wyswietlanie komunikatu
+           a=  int.Parse(Console.ReadLine()); //readline zwaraca String dlatego nie mozna bezposrednio
+                                              // wczytanie danych z klawiatury i konwersja typow 
+
+
+            if (a> 100)
+                Console.WriteLine("wczytana liczba jest wieksza od 100");
+            else Console.WriteLine("wczytana liczba <=100");
+            */
+
+
+            /*
+            float a, b, wynik;
+            
+            Console.Write("Podaj liczbe a: "); // wyswietlanie komunikatu
+            a = float.Parse(Console.ReadLine());
+
+            Console.Write("Podaj liczbe b: "); // wyswietlanie komunikatu
+            b = float.Parse(Console.ReadLine());
+
+            if (a == -b)
+                Console.WriteLine("Próba dzielenia przez zero");
+            else
+            {
+                wynik = (a * a + b) / ((a + b) * (a + b));
+
+                Console.WriteLine("Wartosc wyrazenia wynosi: " + wynik);
+            }
+            */
+
+
+            /* double a, b, c, wynik;
+
+             Console.Write("Podaj liczbe a: "); // wyswietlanie komunikatu
+             a = double.Parse(Console.ReadLine());
+
+             Console.Write("Podaj liczbe b: "); // wyswietlanie komunikatu
+             b = double.Parse(Console.ReadLine());
+
+             Console.Write("Podaj liczbe c: "); // wyswietlanie komunikatu
+             c = double.Parse(Console.ReadLine());
+
+
+             if (c == 0)
+             Console.WriteLine("Próba dzielenia przez zero"  );
+             if (c > 0)
+             {
+                 wynik = a * a + b;
+                 Console.WriteLine("Wartosc wyrazenia wynosi: " + wynik);
+             }
+             if (c < 0)
+             {
+                 wynik = a - (b * b);
+                 Console.WriteLine("Wartosc wyrazenia wynosi: " + wynik);
+             }*/
+
+
+            //zad 3
+
+            uint a, b, x, y;
+
+            Console.Write("Podaj liczbe a: "); // wyswietlanie komunikatu
+            a = uint.Parse(Console.ReadLine());
+
+            Console.Write("Podaj liczbe b: "); // wyswietlanie komunikatu
+            b = uint.Parse(Console.ReadLine());
+            x = a; y = b;
+            while(a!= b) // petla while, winstrukcje wykonuja sie gdy spelnionyzostanie warunek
+            {
+                if (a > b) a = a - b;
+                else b = b - a;
+            }
+            Console.Write($"Najwiekszy wspolny dzielnik liczb ({x} {y}) wynosi: {a}");
+
+
+            Console.ReadKey(); //czytaj klawisz
+        }
+    }
+}
+
+zajęcia 22/10/2022
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace zajecia2_22_10_22
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            /*int suma = 0;
+            Console.Write("Podaj liczbe: "); // wyswietlanie komunikatu
+            int liczba = int.Parse(Console.ReadLine());
+
+
+            while(liczba>0)
+            {
+                suma += liczba % 10; // (suma=suma+liczba) dodanie do sumy ostatniej cyfry
+                liczba = liczba / 10;
+            }
+
+            Console.Write("Suma cyfr rozwinięcia dziesiętnego wynosi= " + suma);
+            Console.ReadKey(); //czytaj klawisz*/
+
+            //zadanie 5
+            /* int n, i, m = 0, flag = 0;
+             Console.Write("Podaj liczbe: "); // wyswietlanie komunikatu
+              n = int.Parse(Console.ReadLine());
+
+             m = n / 2;
+             for (i = 2; i <= m; i++)
+             {
+                 if (n % i == 0)
+                 {
+                     Console.Write("Number " + n + " is not Prime.");
+                     flag = 1;
+                     break;
+                 }
+             }
+             if (flag == 0)
+                 Console.Write("Liczba "+ n + " jest liczbą pierwszą.");
+
+
+         Console.ReadKey(); //czytaj klawisz
+ */
+            /* Console.Write("Podaj liczbe: "); // wyswietlanie komunikatu
+             long dzielnik = 2;
+             bool pierwsza = true;
+             long liczba  = long.Parse(Console.ReadLine());
+
+             while (dzielnik * dzielnik <= liczba)
+             {
+
+                 if (liczba % dzielnik == 0)
+                 {
+                     pierwsza = false;
+                     if (liczba % dzielnik == 0) Console.WriteLine($"Liczba {liczba} jest liczba złożoną podzielną przez  {dzielnik}");
+                     break;
+                 }
+                 dzielnik++;
+             }
+             if(pierwsza) Console.Write("Liczba " + liczba + " jest liczbą pierwszą.");
+
+             Console.ReadKey(); //czytaj klawisz*/
+
+
+
+            //zad 6
+            int h;
+            Console.Write("Podaj wysokosc choinki ");
+            if (int.TryParse(Console.ReadLine(), out h))
+            {
+                for (int w = 1; w <= h; w++)
+                {
+                    for (int s = 1; s <= h - w; s++)
+                        Console.Write(" ");
+                    for (int k = 1; k <=2 * w -1; k++) //kolumny
+                        Console.Write("*");
+                    Console.WriteLine();
+                }
+            }
+            else
+                Console.WriteLine("wprowadzono niepoprawną wwartość");
+
+            Console.ReadKey(); //czytaj klawisz*/
+
+
+
+
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+namespace zajecia._05._11._2022
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            /*int suma = 0;
+            Console.Write("Podaj liczbe: "); // wyswietlanie komunikatu
+            int liczba = int.Parse(Console.ReadLine());
+
+
+            while(liczba>0)
+            {
+                suma += liczba % 10; // (suma=suma+liczba) dodanie do sumy ostatniej cyfry
+                liczba = liczba / 10;
+            }
+
+            Console.Write("Suma cyfr rozwinięcia dziesiętnego wynosi= " + suma);
+            Console.ReadKey(); //czytaj klawisz*/
+
+            //zadanie 5
+            /* int n, i, m = 0, flag = 0;
+             Console.Write("Podaj liczbe: "); // wyswietlanie komunikatu
+              n = int.Parse(Console.ReadLine());
+
+             m = n / 2;
+             for (i = 2; i <= m; i++)
+             {
+                 if (n % i == 0)
+                 {
+                     Console.Write("Number " + n + " is not Prime.");
+                     flag = 1;
+                     break;
+                 }
+             }
+             if (flag == 0)
+                 Console.Write("Liczba "+ n + " jest liczbą pierwszą.");
+
+
+         Console.ReadKey(); //czytaj klawisz
+ */
+            /* Console.Write("Podaj liczbe: "); // wyswietlanie komunikatu
+             long dzielnik = 2;
+             bool pierwsza = true;
+             long liczba  = long.Parse(Console.ReadLine());
+
+             while (dzielnik * dzielnik <= liczba)
+             {
+
+                 if (liczba % dzielnik == 0)
+                 {
+                     pierwsza = false;
+                     if (liczba % dzielnik == 0) Console.WriteLine($"Liczba {liczba} jest liczba złożoną podzielną przez  {dzielnik}");
+                     break;
+                 }
+                 dzielnik++;
+             }
+             if(pierwsza) Console.Write("Liczba " + liczba + " jest liczbą pierwszą.");
+
+             Console.ReadKey(); //czytaj klawisz*/
+
+
+
+            //zad 6
+            int h;
+            Console.Write("Podaj wysokosc choinki ");
+            if (int.TryParse(Console.ReadLine(), out h))
+            {
+                for (int w = 1; w <= h; w++)
+                {
+                    for (int s = 1; s <= h - w; s++)
+                        Console.Write(" ");
+                    for (int k = 1; k <= 2 * w - 1; k++) //kolumny
+                        Console.Write("*");
+                    Console.WriteLine();
+                }
+            }
+            else
+                Console.WriteLine("wprowadzono niepoprawną wwartość");
+
+
+            //pien 
+            for(int s =1; s <= h -1; s++)// spacje w wiuerszu
+            {
+                Console.Write(" ");
+            }
+            Console.WriteLine("|");
+
+            Console.ReadKey(); //czytaj klawisz*/
+
+
+
+        }
+    }
+
+}
