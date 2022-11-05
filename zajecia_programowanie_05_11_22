@@ -1,1 +1,31 @@
+namespace zajecia_05_11
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
 
+            //zadanie 7
+
+            uint st;
+            int sumD = 0, sumG = 0, x;
+
+            Console.Write("Podaj stopien macierzy: "); // 
+            st = uint.Parse(Console.ReadLine());
+            for (int w = 1; w <= st; w++)
+            {
+
+                for (int k = 1; k <= st; k++)
+                {
+                    Console.Write($"Podaj element [{w}, {k}]=");
+                    x= int.Parse(Console.ReadLine());
+                    if (k > w) sumG += x;
+                    else if (k < w) sumD += x;
+                }
+            }
+
+            if (sumG > sumD) Console.WriteLine($"Suma elementów powyżej głównej przekątnej {sumG} nie jest większa od sumy elementów\r\nponiżej głównej przekątnej {sumD}");
+            else Console.WriteLine($"Suma elementów powyżej głównej przekątnej {sumG} nie jest większa od sumy elementów\\r\\powyżej głównej przekątnej {sumD}");
+        }
+    }
+}
