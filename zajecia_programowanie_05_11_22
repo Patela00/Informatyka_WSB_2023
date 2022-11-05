@@ -29,3 +29,69 @@ namespace zajecia_05_11
         }
     }
 }
+
+
+
+
+using System.Security.Cryptography.X509Certificates;
+
+namespace zad8
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            //zad8
+
+            uint ile;
+            while(true) //wyjscie z petli ggdy parsowanie ok i liczba <1 .. 10>
+            {
+                Console.WriteLine("Wprowadź liczbę elementów do posortowania <1 .. 10>: ");
+                if (uint.TryParse(Console.ReadLine(), out ile))
+                {
+                    if ((ile >= 1) && (ile <= 10)) break;
+                    else Console.WriteLine("zła liczba, spróbuj ponownie");
+                }
+                else Console.WriteLine("błąd parsowania");
+
+            }
+            int[] tab = new int[ile]; // definicja tablicy (deklarcja i utowrzenie)
+            int x;
+            //wprowadzenie liczby
+            for (int i = 0; i < ile; i++)
+            {
+                while (true)
+                {
+                    Console.WriteLine($"Wprowadz liczbe [{i + 1}]=");
+                    if (int.TryParse(Console.ReadLine(), out tab[i])) break;
+                    else Console.WriteLine("błąd parsowania!!!");
+
+                }
+            }
+            //sortowanie 
+
+            for (int j = 0; j < ile; j++)
+            {
+
+
+
+                for (int i = 0; i < ile - 1; i++)
+                {
+                    if (tab[i] > tab[i + 1]) //lewy > prawy
+                    {
+                        x = tab[i];
+                        tab[i] = tab[i + 1];
+                        tab[i + 1] = x;
+                    }
+                }
+                //wyswietlanie posortowanej tablicy
+                for (int i = 0; i < ile; i++)
+                {
+                    Console.WriteLine(tab[i]);
+                }
+            }
+
+        }
+    }
+}
