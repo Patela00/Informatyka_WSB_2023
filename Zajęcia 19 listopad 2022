@@ -1,0 +1,73 @@
+//będzie trzeba dodać wykrywanie wyjątków, do którego został pokazany kodna wykładzie 3 tu https://moodle2.e-wsb.pl/mod/folder/view.php?id=4657440
+
+namespace zajecia_19_listopad
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // rozwiązanie z neta
+            //int n = 0;
+            //Console.Write("Podaj liczbe: ");
+            //n = Convert.ToInt32(Console.ReadLine());
+            //bool[] tab = new bool[n + 1];
+            //for (int i = 2; i * i <= n; i++)
+            //{
+            //    if (tab[i] == true)
+            //    {
+            //        continue;
+            //    }
+            //    for (int j = 2 * i; j <= n; j += i)
+            //    {
+            //        tab[j] = true;
+            //    }
+            //}
+            //Console.WriteLine("Liczby pierwsze z zakresu [0," + n + "]: ");
+            //for (int i = 2; i <= n; i++)
+            //{
+            //    if (tab[i] == false)
+            //    {
+            //        Console.Write(i + " ");
+            //    }
+            //}
+            //Console.ReadKey();
+
+            int dzielnik = 1;
+            Console.WriteLine("Podaj liczbę: ");
+            int liczba = int.Parse(Console.ReadLine());
+            bool[] sito = new bool[liczba + 1];
+            for (int i = 0; i < liczba; i++)
+            {
+                sito[i] = true; //ustawienie wszystkich elementów na true
+            }
+            // Sito Eratostenesa
+            for (int i = 2; i < liczba; i++)
+            {
+                for(int j =i+i; j <= liczba; j+= i ) // j = j+1
+                {
+                    sito[j] = false;
+                    if (j == liczba)
+                    {
+                        dzielnik = i;
+                        break;
+                    }
+                        
+                }
+                if (dzielnik > 1) break;
+            }
+            // wyswietlanie sita po przesianiu
+            //for(int i = 2; i <= liczba; i++)
+            //{
+            //    if (sito[i])
+            //        Console.Write(i + " ");
+            //}
+
+            if (sito[liczba]) Console.WriteLine($" Liczba {liczba} jest liczbą pierwszą");
+            else Console.WriteLine($"Liczba {liczba} jest liczba złożoną podzielną przez {dzielnik}");
+
+
+
+
+        }
+    }
+}
