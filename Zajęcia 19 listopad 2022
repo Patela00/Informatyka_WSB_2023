@@ -71,3 +71,39 @@ namespace zajecia_19_listopad
         }
     }
 }
+
+
+
+
+////// kod z wykladu 3
+
+/*
+  while (true)
+            {
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.Write("podaj liczbę całkowitą: ");
+                int liczba;
+                string xx = Console.ReadLine();
+                try
+                {
+                    liczba = int.Parse(xx);
+                    Console.WriteLine("parsowanie OK");
+                    break;
+                }
+                catch (FormatException)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("wprowadzono nieprawidłowy znak");
+                }
+                catch ( OverflowException)
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine($"liczba z poza zakresu <{int.MinValue}, {int.MaxValue}>");
+                }
+                catch (ArgumentNullException)
+                {
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.WriteLine("wprowadzono pusty ciąg");
+                }
+
+*/
