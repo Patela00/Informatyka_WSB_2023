@@ -1,0 +1,170 @@
+//using SystemIO;
+
+namespace _17_12_2022
+{
+    internal class Program
+    {
+
+
+        struct Osoba
+        {
+            public string imie, nazwisko;
+            public byte wiek;
+        }
+
+
+
+        static void czytajInt(string komunikat, out int liczba, int min = int.MinValue, int max = int.MaxValue)
+        {
+            string str;
+            while (true)
+            {
+                Console.Write(komunikat);
+                str = Console.ReadLine();
+                try
+                {
+                    liczba = int.Parse(str);
+                    if ((liczba >= min) && (liczba <= max)) break;
+                    else Console.WriteLine($"wprowadzona wartość nie mieści się w przedziale <{min},{max}>");
+                }
+                catch (OverflowException)
+                {
+                    Console.WriteLine("liczba przekracza wartość dla typu int ");
+                }
+                catch (ArgumentNullException)
+                {
+                    Console.WriteLine("pusty ciąg ");
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("wprowadzono niepoprawny znak/i ");
+                }
+            }
+
+        }
+
+        static Osoba readOsoba()
+        {
+            int liczba;
+            Osoba os;
+            Console.Write("Podaj imię: ");
+            os.imie = Console.ReadLine();
+            Console.Write("Podaj nazwisko: ");
+            os.nazwisko = Console.ReadLine();
+            czytajInt("Podaj wiek <0, 120 ", out liczba, 0, 120);
+            os.wiek = (byte)liczba;
+            return os;
+
+
+        }
+
+
+        static void wyswietlOsobe(Osoba os)
+        {
+            Console.WriteLine($"nazwisko: {os.nazwisko}, imię: {os.imie}, wiek: {os.wiek}");
+        }
+
+
+        static void menu(List<Osoba>osoby)
+        {
+            int wybor;
+            do
+            {
+                Console.ReadKey();
+                Console.Clear();
+                Console.WriteLine("0. koniec");
+                Console.WriteLine("1. wczytaj plik z osobami");
+                Console.WriteLine("2. zapisz do pliku");
+                Console.WriteLine("3. Dodaj osobę");
+                Console.WriteLine("4. Usuń osobę");
+                Console.WriteLine("5. Edytuj osobę");
+                Console.WriteLine("6. Pokaz liste osob");
+                czytajInt("Wybierz pozycje z menu <0...6>", out wybor, 0, 6);
+
+                switch (wybor)
+                {
+                    case 0: break;
+                    case 1: czytajPlik(); break;
+                    case 2: zapiszPlik(); break;
+                    case 3: dodajOsobe(osoby); break;
+                    case 4: usunOsobe(); break;
+                    case 5: edytujOsobe(); break;
+                    case 6: pokazOsoby(); break;
+
+                }
+            } while (wybor > 0);
+
+        }
+
+        static void czytajPlik()
+        {
+
+        }
+
+        static void zapiszPlik(string nazwaPliku, List<Osoba> lista)
+        {
+            using(StreamWriter sw = new StreamWriter(nazwaPliku))
+            {
+                foreach(Osoba os in lista)
+                {
+                    sw.WriteLine(os.ToString());
+                }
+            }
+
+        }
+
+        static void dodajOsobe(List<Osoba> lista)
+        {
+            //listaOsob.Add(os1);
+            //listaOsob.Add(readOsoba());
+
+            lista.Add(readOsoba());
+        }
+
+        static void usunOsobe()
+        {
+
+        }
+
+        
+
+        static void edytujOsobe()
+        {
+
+        }
+
+        static void pokazOsoby(List<Osoba> lista)
+        {
+            foreach (Osoba os in lista)
+            {
+                wyswietlOsobe(os);
+            }
+        } 
+
+
+
+        static void Main(string[] args)
+        {
+            //int x;
+            //Osoba os1, os2; // deklaracja zmiennych typu Osoba (struktura)
+            //os1.nazwisko = "Nowak";
+            //os1.imie = "Jan";
+            //os1.wiek = 27;
+            //os2 = os1;
+
+
+
+
+
+
+            Osoba[] osoby = new Osoba[5]; //tablica typu Osoba
+            List<Osoba> listaOsob = new List<Osoba>(); // lista typu Osoba
+            menu();
+            
+            Console.ReadKey();
+
+
+
+        }
+    }
+}
