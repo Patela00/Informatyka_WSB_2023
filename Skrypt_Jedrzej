@@ -71,5 +71,21 @@ Skrypt wyświetla informacje o aktualnie zalogowanym użytkowniku i aktualnej da
 Funkcje służą do wyświetlania tych informacji
 Pętla while true pozwala na ciągłe wyświetlanie tych informacji
 
-#############
+#############opis kodu krok po kroku######################
+
+
+Oto krok po kroku opis działania powyższego skryptu bash:
+
+Skrypt rozpoczyna się od linii #!/bin/bash, która oznacza, że jest to skrypt bash.
+Następnie definiuje się dwie funkcje: info_o_uzytkowniku i info_o_dacie.
+Funkcja info_o_uzytkowniku pobiera nazwę aktualnie zalogowanego użytkownika oraz jego katalog domowy, a następnie wyświetla informacje o nich.
+Funkcja info_o_dacie pobiera aktualną datę w formacie dd-mm-yyyy hh:mm:ss i wyświetla ją.
+Następnie skrypt wywołuje obie funkcje, aby wyświetlić informacje o aktualnie zalogowanym użytkowniku i aktualnej dacie.
+Następnie rozpoczyna się pętla while true, która będzie wykonywana nieskończenie. W każdym obiegu pętli skrypt wywołuje ponownie funkcje info_o_uzytkowniku i info_o_dacie, aby wy
+
+Oto kontynuacja opisu działania powyższego skryptu bash:
+
+W każdym obiegu pętli skrypt wywołuje ponownie funkcje info_o_uzytkowniku i info_o_dacie, aby wyświetlić aktualne informacje o użytkowniku i dacie.
+Skrypt kończy się poleceniem sleep 60, które powoduje, że skrypt czeka 60 sekund przed kolejnym obiegiem pętli.
+Skrypt będzie wykonywał się nieskończenie, wyświetlając co 60 sekund aktualne informacje o użytkowniku i dacie.
 
