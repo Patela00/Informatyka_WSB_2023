@@ -1,0 +1,75 @@
+#!/bin/bash
+
+# funkcja wyświetlająca informacje o użytkowniku
+function info_o_uzytkowniku() {
+  # pobieramy nazwę użytkownika
+  local nazwa=$USER
+  # pobieramy katalog domowy użytkownika
+  local katalog=$HOME
+
+  # wyświetlamy informacje
+  echo "Nazwa użytkownika: $nazwa"
+  echo " Katalog domowy: $katalog"
+}
+
+# funkcja wyświetlająca informacje o dacie
+function info_o_dacie() {
+  # pobieramy aktualną datę w formacie dd-mm-yyyy hh:mm:ss
+  local data=$(date +"%d-%m-%Y %H:%M:%S")
+
+  # wyświetlamy informacje
+  echo " Data: $data"
+}
+
+# wyświetlamy informacje o użytkowniku
+info_o_uzytkowniku
+
+# wyświetlamy informacje o dacie
+info_o_dacie
+
+# pętla wyświetlająca informacje o użytkowniku i dacie co 60 sekund
+while true
+do
+  # wyświetlamy informacje o użytkowniku
+  info_o_uzytkowniku
+
+  # wyświetlamy informacje o dacie
+  info_o_dacie
+
+  # czekamy 60 sekund
+  sleep 60
+done
+
+
+
+##############Prezentacja############
+
+Slajd 1: Tytuł prezentacji
+
+Nazwa skryptu
+Slajd 2: Wstęp
+
+Cel skryptu: wyświetlenie informacji o aktualnie zalogowanym użytkowniku i aktualnej dacie
+Slajd 3: Spis treści
+
+Opis kodu
+Pętla wyświetlająca informacje co 60 sekund
+Slajd 4: Opis kodu
+
+Linia #!/bin/bash - oznaczenie skryptu bash
+Funkcja info_o_uzytkowniku - wyświetla informacje o użytkowniku
+Funkcja info_o_dacie - wyświetla informacje o dacie
+Wywołanie funkcji info_o_uzytkowniku i info_o_dacie
+Slajd 5: Pętla wyświetlająca informacje co 60 sekund
+
+Pętla while true - wykonuje się nieskończenie
+Wywołanie funkcji info_o_uzytkowniku i info_o_dacie
+Polecenie sleep 60 - czekanie 60 sekund przed kolejnym obiegiem pętli
+Slajd 6: Podsumowanie
+
+Skrypt wyświetla informacje o aktualnie zalogowanym użytkowniku i aktualnej dacie co 60 sekund
+Funkcje służą do wyświetlania tych informacji
+Pętla while true pozwala na ciągłe wyświetlanie tych informacji
+
+#############
+
