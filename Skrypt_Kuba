@@ -1,0 +1,113 @@
+#!/bin/bash
+
+# funkcja wyświetlająca informacje o użytkowniku
+function info_o_uzytkowniku() {
+  # pobieramy nazwę użytkownika
+  local nazwa=$USER
+  # pobieramy katalog domowy użytkownika
+  local katalog=$HOME
+
+  # wyświetlamy informacje
+  echo " Nazwa użytkownika: $nazwa"
+  echo " Katalog domowy: $katalog"
+}
+
+# funkcja wyświetlająca informacje o dacie
+function info_o_dacie() {
+  # pobieramy aktualną datę w formacie dd-mm-yyyy hh:mm:ss
+  local data=$(date +"%d-%m-%Y %H:%M:%S")
+
+  # wyświetlamy informacje
+  echo " Data: $data"
+}
+
+# wyświetlamy informacje o użytkowniku
+info_o_uzytkowniku
+
+# wyświetlamy informacje o dacie
+info_o_dacie
+
+# pętla wyświetlająca informacje o użytkowniku i dacie co 60 sekund
+while true
+do
+  # wyświetlamy informacje o użytkowniku
+  info_o_uzytkowniku
+
+  # wyświetlamy informacje o dacie
+  info_o_dacie
+
+  # pobieramy aktualny rok
+  rok=$(date +"%Y")
+
+  # sprawdzamy, czy rok jest podzielny przez 4
+  if [ $((rok % 4)) -eq 0 ]
+  then
+    # jeśli tak, to sprawdzamy, czy rok jest podzielny przez 100
+    if [ $((rok % 100)) -eq 0 ]
+    then
+      # jeśli tak, to sprawdzamy, czy rok jest podzielny przez 400
+      if [ $((rok % 400)) -eq 0 ]
+      then
+        # jeśli tak, to rok jest przestępny
+        echo " Rok $rok jest przestępny."
+      else
+        # w przeciwnym razie rok nie jest przestępny
+        echo " Rok $rok nie jest przestępny."
+      fi
+    else
+      # w przeciwnym razie rok jest przestępny
+      echo " Rok $rok jest przestępny."
+    fi
+
+
+#############Prezentacja#####################
+Slajd 1: Tytuł prezentacji
+
+Nazwa skryptu
+Slajd 2: Wstęp
+
+Cel skryptu: wyświetlenie informacji o aktualnie zalogowanym użytkowniku, aktualnej dacie i czy dany rok jest przestępny
+Slajd 3: Spis treści
+
+Opis kodu
+Pętla wyświetlająca informacje co 60 sekund
+Slajd 4: Opis kodu
+
+Linia #!/bin/bash - oznaczenie skryptu bash
+Funkcja info_o_uzytkowniku - wyświetla informacje o użytkowniku
+Funkcja info_o_dacie - wyświetla informacje o dacie
+Wywołanie funkcji info_o_uzytkowniku i info_o_dacie
+Slajd 5: Pętla wyświetlająca informacje co 60 sekund
+
+Pętla while true - wykonuje się nieskończenie
+Wywołanie funkcji info_o_uzytkowniku i info_o_dacie
+Pobranie aktualnego roku i przypisanie go do zmiennej rok
+Sprawdzenie, czy rok jest podzielny przez 4
+Jeśli tak, to sprawdzenie, czy rok jest podzielny przez 100
+Jeśli tak, to sprawdzenie, czy rok jest podzielny przez 400
+Jeśli tak, to rok jest przestępny
+W przeciwnym razie rok nie jest przestępny
+W przeciwnym razie rok jest przestępny
+W przeciwnym razie rok nie jest przestępny
+Polecenie sleep 60 - czekanie 60 sekund przed kolejnym obiegiem pętli
+Slajd 6: Podsumowanie
+
+Skrypt wyświetla informacje o aktualnie zalogowanym użytkowniku, aktualnej dacie i czy dany rok jest przestępny co 60 sekund
+Funkcje służą do wyświetlania tych informacji
+Pętla while true pozwala na ciągłe w
+
+
+
+#####opis działnia skryptu###########
+
+Oto krok po kroku opis działania powyższego skryptu bash:
+
+Skrypt rozpoczyna się od linii #!/bin/bash, która oznacza, że jest to skrypt bash.
+Następnie definiuje się dwie funkcje: info_o_uzytkowniku i info_o_dacie.
+Funkcja info_o_uzytkowniku pobiera nazwę aktualnie zalogowanego użytkownika oraz jego katalog domowy, a następnie wyświetla informacje o nich.
+Funkcja info_o_dacie pobiera aktualną datę w formacie dd-mm-yyyy hh:mm:ss i wyświetla ją.
+Następnie skrypt wywołuje obie funkcje, aby wyświetlić informacje o aktualnie zalogowanym użytkowniku i aktualnej dacie.
+Następnie rozpoczyna się pętla while true, która będzie wykonywana nieskończenie. W każdym obiegu pętli skrypt wywołuje ponownie funkcje info_o_uzytkowniku i info_o_dacie, aby wyświetlić aktualne informacje o użytkowniku i dacie.
+Skrypt pobiera aktualny rok i przypisuje go do zmiennej rok.
+Następnie sprawdza, czy rok jest podzielny przez 4. Jeśli tak, to sprawdza, czy rok jest podzielny przez 100. Jeśli tak, to sprawdza, czy rok jest podzielny przez 400. Jeśli tak, to wyświetla informację, że rok jest przestępny. W przeciwnym razie wyświetla informację, że rok nie jest przestępny. Jeśli rok nie jest podzielny przez 4, to wyświetla informację, że rok nie jest przestępny.
+Skrypt kończy się poleceniem sleep 60, które powoduje, że skrypt czeka 60 sekund przed kolejnym obiegiem pętli.
